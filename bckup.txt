@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Assista ao vídeo exclusivo e veja conteúdo gerado aleatoriamente com números, letras e frases únicas." />
+  <meta name="keywords" content="vídeo, aleatório, exclusivo, YouTube, conteúdo único, SEO, gerador" />
+  <meta name="author" content="Seu Nome ou Marca" />
+  <title>Vídeo Exclusivo com Conteúdo Aleatório</title>
+
+  <style>
+    /* Estilo global da página */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-top: 20px;
+    }
+
+    #video-container {
+      margin: 30px auto;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    #video-title {
+      font-size: 22px;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    #random-content {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #444;
+      word-break: break-word;
+      padding: 10px;
+    }
+
+    /* Banner de propaganda com destaque e pisca mais lento */
+    #ad-banner {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: red;
+      color: white;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      z-index: 999;
+      border-radius: 8px;
+      animation: blink 10s infinite;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    /* Botão de fechar propaganda */
+    #close-ad {
+      margin-top: 10px;
+      background-color: white;
+      color: red;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Animação para piscar lentamente e com mais destaque */
+    @keyframes blink {
+      0%, 40%, 100% { opacity: 1; }
+      50%, 60% { opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner de propaganda -->
+  <div id="ad-banner">
+    SEGURO DE CARRO DDD (27)99949-7001 CONSÓRCIO ENTRE OUTROS
+    <br><br>
+    <a href="https://geocredibnkvitoria.com/" target="_blank" style="color: yellow;">CRÉDITO PESSOAL</a>
+    <br><br>
+    <br>
+    <a href="https://central.dokehost.com.br/aff.php?aff=90" target="_blank" style="color: yellow;">AS MELHORES VPS DO MERCADO</a>
+    <br><br><br>
+    <a href="https://www.larissasaib.com.br/" target="_blank" style="color:yellow;">SOLUÇÃO CAPILAR</a>
+    <br><br><br><br>
+    <button id="close-ad">Fechar</button>
+  </div>
+
+  <!-- Título da página -->
+  <h1>Confira o Vídeo Exclusivo!</h1>
+
+  <!-- Container do vídeo -->
+  <div id="video-container">
+    <iframe id="youtube-frame" src="" title="Vídeo do YouTube" allowfullscreen></iframe>
+  </div>
+
+  <!-- Título do vídeo exibido dinamicamente -->
+  <div id="video-title"></div>
+
+  <!-- Frase aleatória + código -->
+  <div id="random-content"></div>
+
+  <script>
+    // Fecha o banner de propaganda
+    document.getElementById("close-ad").onclick = function () {
+      document.getElementById("ad-banner").style.display = "none";
+    };
+
+    // Lista de vídeos com id, título e tempo de início opcional
+    const videos = [
+      {
+        id: "xz6yu8CCAIs",
+        titulo: "RICA VAI DAR O PATINETE PRA QUEM PEGAR O RENAN KKKKKKKKKKKKKKKKKKKKKKKKKK",
+        tempo: "55s"
+      },
+      {
+        id: "aMshjnmtSGI",
+        titulo: "Rica Games está lendo uma mini bíblia",
+        tempo: "55s"
+      },
+      {
+        id: "KjVfAPtNZZQ",
+        titulo: "Rica Games deixando de ser bobo",
+        tempo: "55s"
+      },
+      {
+        id: "KjVfAPtNZZQ",
+        titulo: "Rica Games deixando de ser bobo",
+        tempo: "55s"
+      },
+      {
+        id: "1z3jNW5xKrQ",
+        titulo: "Fui ao Poupatempo e Sobrevivi",
+        tempo: "55s"
+      }
+    ];
+
+    // Converte tempo "1m10s", "55s" em segundos
+    function converterTempoParaSegundos(tempo) {
+      const regex = /(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/;
+      const match = tempo.match(regex);
+      if (!match) return 0;
+      const horas = parseInt(match[1] || 0);
+      const minutos = parseInt(match[2] || 0);
+      const segundos = parseInt(match[3] || 0);
+      return horas * 3600 + minutos * 60 + segundos;
+    }
+
+    // Seleciona vídeo aleatório
+    const video = videos[Math.floor(Math.random() * videos.length)];
+    const startTime = video.tempo ? `&start=${converterTempoParaSegundos(video.tempo)}` : "";
+    const embedUrl = `https://www.youtube.com/embed/${video.id}?rel=0${startTime}`;
+
+    // Define vídeo no iframe
+    document.getElementById("youtube-frame").src = embedUrl;
+    document.getElementById("video-title").textContent = video.titulo;
+
+    // Frases aleatórias
+    const frases = [
+      "Você sabia? Este conteúdo é exclusivo e dinâmico.",
+      "Cada visita traz algo novo e surpreendente.",
+      "Conteúdo único gerado automaticamente para você.",
+      "Explore conteúdos diferentes a cada atualização.",
+      "Nada aqui é repetido. Descubra a novidade!"
+    ];
+
+    // Gera código aleatório
+    function gerarCodigoAleatorio(tamanho) {
+      const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let resultado = '';
+      for (let i = 0; i < tamanho; i++) {
+        resultado += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+      }
+      return resultado;
+    }
+
+    // Exibe frase + código
+    const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+    const codigoAleatorio = gerarCodigoAleatorio(20);
+    const resultadoFinal = `${fraseAleatoria} | Código: ${codigoAleatorio}`;
+    document.getElementById("random-content").textContent = resultadoFinal;
+  </script>
+</body>
+</html>
